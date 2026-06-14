@@ -3,243 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRS Language — полная документация</title>
+    <title>КРС Language — полная документация</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #f0f2f5;
-            font-family: 'Segoe UI', 'Courier New', monospace;
-            line-height: 1.5;
-        }
-
-        .header {
-            background: #1a2a3a;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid #ff9800;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            letter-spacing: -1px;
-        }
-
-        .header h1 span {
-            color: #ff9800;
-        }
-
-        .header p {
-            margin-top: 12px;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .badge {
-            display: inline-block;
-            background: #ff9800;
-            color: #1a2a3a;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            margin-top: 12px;
-        }
-
-        .nav {
-            background: white;
-            padding: 12px 20px;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .nav a {
-            color: #1a2a3a;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.2s;
-        }
-
-        .nav a:hover {
-            background: #ff9800;
-            color: white;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 30px 20px;
-        }
-
-        .section {
-            background: white;
-            border-radius: 16px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-
-        .section-title {
-            background: #eef2f7;
-            padding: 18px 24px;
-            font-size: 1.6rem;
-            font-weight: 600;
-            border-bottom: 2px solid #ff9800;
-            color: #1a2a3a;
-        }
-
-        .section-content {
-            padding: 24px;
-        }
-
-        .commands-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 20px;
-        }
-
-        .cmd-card {
-            background: #fafbfd;
-            border: 1px solid #e0e7ed;
-            border-radius: 12px;
-            padding: 16px;
-            transition: 0.1s;
-        }
-
-        .cmd-card:hover {
-            border-color: #ff9800;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .cmd-name {
-            font-family: monospace;
-            font-size: 1rem;
-            font-weight: bold;
-            background: #1a2a3a;
-            color: #ff9800;
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-
-        .cmd-desc {
-            color: #2c3e4e;
-            margin: 10px 0;
-            font-size: 0.9rem;
-        }
-
-        .cmd-example {
-            background: #1e2a2f;
-            color: #d4d4d4;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.75rem;
-            margin-top: 10px;
-            overflow-x: auto;
-        }
-
-        .example-box {
-            background: #1e2a2f;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-            overflow-x: auto;
-            font-family: monospace;
-            font-size: 0.85rem;
-        }
-
-        .example-box pre {
-            margin: 0;
-            white-space: pre-wrap;
-        }
-
-        .info-note {
-            background: #e8f0fe;
-            padding: 14px;
-            border-radius: 10px;
-            margin: 16px 0;
-            border-left: 4px solid #2196f3;
-        }
-
-        .warning-note {
-            background: #fff3e0;
-            padding: 14px;
-            border-radius: 10px;
-            margin: 16px 0;
-            border-left: 4px solid #ff9800;
-        }
-
-        .btn-copy {
-            background: #ff9800;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-family: monospace;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .btn-copy:hover {
-            background: #e68900;
-        }
-
-        footer {
-            background: #1a2a3a;
-            color: white;
-            text-align: center;
-            padding: 24px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 700px) {
-            .commands-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 1.3rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f2f5; font-family: 'Segoe UI', 'Courier New', monospace; line-height: 1.5; }
+        .header { background: #1a2a3a; color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid #ff9800; }
+        .header h1 { font-size: 2.5rem; letter-spacing: -1px; }
+        .header h1 span { color: #ff9800; }
+        .header p { margin-top: 12px; font-size: 1.1rem; opacity: 0.9; }
+        .badge { display: inline-block; background: #ff9800; color: #1a2a3a; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; margin-top: 12px; }
+        .nav { background: white; padding: 12px 20px; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .nav a { color: #1a2a3a; text-decoration: none; font-weight: 500; padding: 6px 12px; border-radius: 20px; transition: 0.2s; }
+        .nav a:hover { background: #ff9800; color: white; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 30px 20px; }
+        .section { background: white; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden; }
+        .section-title { background: #eef2f7; padding: 18px 24px; font-size: 1.6rem; font-weight: 600; border-bottom: 2px solid #ff9800; color: #1a2a3a; }
+        .section-content { padding: 24px; }
+        .commands-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .cmd-card { background: #fafbfd; border: 1px solid #e0e7ed; border-radius: 12px; padding: 16px; transition: 0.1s; }
+        .cmd-card:hover { border-color: #ff9800; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .cmd-name { font-family: monospace; font-size: 1rem; font-weight: bold; background: #1a2a3a; color: #ff9800; display: inline-block; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+        .cmd-desc { color: #2c3e4e; margin: 10px 0; font-size: 0.9rem; }
+        .cmd-example { background: #1e2a2f; color: #d4d4d4; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.75rem; margin-top: 10px; overflow-x: auto; }
+        .example-box { background: #1e2a2f; color: #f8f8f2; padding: 20px; border-radius: 12px; margin: 20px 0; overflow-x: auto; font-family: monospace; font-size: 0.85rem; }
+        .info-note { background: #e8f0fe; padding: 14px; border-radius: 10px; margin: 16px 0; border-left: 4px solid #2196f3; }
+        .warning-note { background: #fff3e0; padding: 14px; border-radius: 10px; margin: 16px 0; border-left: 4px solid #ff9800; }
+        .btn-copy { background: #ff9800; border: none; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-family: monospace; font-weight: bold; margin-top: 10px; }
+        .btn-copy:hover { background: #e68900; }
+        footer { background: #1a2a3a; color: white; text-align: center; padding: 24px; margin-top: 40px; }
+        .category-title { font-size: 1.3rem; margin: 20px 0 15px 0; color: #1a2a3a; border-left: 4px solid #ff9800; padding-left: 15px; }
+        @media (max-width: 700px) { .commands-grid { grid-template-columns: 1fr; } .section-title { font-size: 1.3rem; } }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>CRS <span>Language</span></h1>
-    <p>Cursed Coding Style — язык для быстрой вёрстки на русском и английском</p>
-    <div class="badge">Синтаксис: &lt;c.команда&gt; ... &lt;cc.команда&gt; (закрытие без слэша!)</div>
+    <h1>КРС <span>Language</span></h1>
+    <p>Полная документация по всем командам</p>
+    <div class="badge">Синтаксис: &lt;c.команда&gt; ... &lt;cc.команда&gt; (закрытие БЕЗ слэша!)</div>
 </div>
 
 <div class="nav">
     <a href="#about">О языке</a>
-    <a href="#commands">Команды</a>
-    <a href="#krs">КРС-КСС и КРС-ЖС</a>
+    <a href="#basics">Базовые</a>
+    <a href="#forms">Формы</a>
+    <a href="#media">Медиа</a>
+    <a href="#lists">Списки</a>
+    <a href="#tables">Таблицы</a>
+    <a href="#structural">Структура</a>
+    <a href="#style">Стили</a>
+    <a href="#script">Скрипты</a>
     <a href="#examples">Примеры</a>
-    <a href="#rules">Правила</a>
 </div>
 
 <div class="container">
     <!-- О ЯЗЫКЕ -->
     <div id="about" class="section">
-        <div class="section-title">📖 О языке CRS</div>
+        <div class="section-title">📖 О языке КРС</div>
         <div class="section-content">
-            <p><strong>CRS (Cursed Coding Style)</strong> — это язык разметки, который превращает простые теги в полноценные HTML, CSS и JavaScript. Команды можно писать на английском, а стили и скрипты — на русском (КРС-КСС и КРС-ЖС).</p>
+            <p><strong>КРС (Cursed Coding Style)</strong> — это язык разметки, который превращает простые теги в полноценные HTML, CSS и JavaScript.</p>
             <div class="warning-note">
                 <strong>🔤 ВАЖНОЕ ПРАВИЛО:</strong><br>
                 Каждая команда открывается <code>&lt;c.имя_команды&gt;</code> и закрывается <code>&lt;cc.имя_команды&gt;</code>.<br>
@@ -249,251 +71,272 @@
                 <strong>⚙️ Как это работает:</strong><br>
                 1. Весь код пишется внутри <code>&lt;CURSED-CODING&gt; ... &lt;CCURSED-CODING&gt;</code><br>
                 2. Парсер превращает <code>&lt;c.тег&gt;</code> в реальные HTML-элементы<br>
-                3. <code>&lt;c.style&gt;</code> и <code>&lt;c.script&gt;</code> позволяют добавлять CSS и JS
+                3. У тегов есть атрибуты <code>id</code> и <code>class</code><br>
+                4. <code>&lt;c.style&gt;</code> — для КРС-КСС (русские стили)<br>
+                5. <code>&lt;c.script&gt;</code> — для КРС-ЖС (русские скрипты)
             </div>
         </div>
     </div>
 
-    <!-- ВСЕ КОМАНДЫ -->
-    <div id="commands" class="section">
-        <div class="section-title">📚 Полный список команд</div>
+    <!-- БАЗОВЫЕ КОМАНДЫ -->
+    <div id="basics" class="section">
+        <div class="section-title">📦 Базовые команды</div>
         <div class="section-content">
             <div class="commands-grid">
-                <!-- Базовые -->
                 <div class="cmd-card"><div class="cmd-name">c.title</div><div class="cmd-desc">Заголовок (h2)</div><div class="cmd-example">&lt;c.title&gt;Мой сайт&lt;cc.title&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.text</div><div class="cmd-desc">Обычный текст/параграф</div><div class="cmd-example">&lt;c.text&gt;Привет мир&lt;cc.text&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.button</div><div class="cmd-desc">Кнопка с классом crs-btn</div><div class="cmd-example">&lt;c.button&gt;Нажми&lt;cc.button&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.input</div><div class="cmd-desc">Поле ввода</div><div class="cmd-example">&lt;c.input&gt;Ваше имя&lt;cc.input&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.card</div><div class="cmd-desc">Карточка (div с рамкой)</div><div class="cmd-example">&lt;c.card&gt;Контент&lt;cc.card&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.style</div><div class="cmd-desc">CSS стили (КРС-КСС тоже тут)</div><div class="cmd-example">&lt;c.style&gt;кнопка { фон = красный }&lt;cc.style&gt;</div></div>
-                <div class="cmd-card"><div class="cmd-name">c.script</div><div class="cmd-desc">JavaScript код (КРС-ЖС тоже тут)</div><div class="cmd-example">&lt;c.script&gt;кнопка { при нажатии показать('Привет') }&lt;cc.script&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.text</div><div class="cmd-desc">Обычный текст</div><div class="cmd-example">&lt;c.text&gt;Привет мир&lt;cc.text&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.button</div><div class="cmd-desc">Кнопка с классом crs-btn</div><div class="cmd-example">&lt;c.button id="myBtn"&gt;Нажми&lt;cc.button&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.card</div><div class="cmd-desc">Карточка с рамкой и отступами</div><div class="cmd-example">&lt;c.card&gt;Контент&lt;cc.card&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.box</div><div class="cmd-desc">Блок с рамкой</div><div class="cmd-example">&lt;c.box&gt;Текст&lt;cc.box&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.hr</div><div class="cmd-desc">Горизонтальная линия</div><div class="cmd-example">&lt;c.hr /&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.spacer</div><div class="cmd-desc">Отступ в px</div><div class="cmd-example">&lt;c.spacer&gt;20&lt;cc.spacer&gt;</div></div>
             </div>
         </div>
     </div>
 
-    <!-- КРС-КСС и КРС-ЖС отдельно -->
-    <div id="krs" class="section">
-        <div class="section-title">🐄 КРС-КСС и КРС-ЖС — русские стили и скрипты</div>
+    <!-- ФОРМЫ И ПОЛЯ -->
+    <div id="forms" class="section">
+        <div class="section-title">📝 Формы и поля ввода</div>
         <div class="section-content">
-            <h3>🎨 КРС-КСС (Каскадные Русские Стандартные стили)</h3>
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.input</div><div class="cmd-desc">Текстовое поле</div><div class="cmd-example">&lt;c.input id="name"&gt;Ваше имя&lt;cc.input&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.textarea</div><div class="cmd-desc">Большое текстовое поле</div><div class="cmd-example">&lt;c.textarea&gt;Описание&lt;cc.textarea&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.select</div><div class="cmd-desc">Выпадающий список</div><div class="cmd-example">&lt;c.select&gt;Красный, Синий, Зелёный&lt;cc.select&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.radio</div><div class="cmd-desc">Радиокнопки (группа)</div><div class="cmd-example">&lt;c.radio&gt;Да, Нет&lt;cc.radio&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.checkbox</div><div class="cmd-desc">Чекбокс</div><div class="cmd-example">&lt;c.checkbox&gt;Согласен&lt;cc.checkbox&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.range</div><div class="cmd-desc">Ползунок 0-100</div><div class="cmd-example">&lt;c.range&gt;50&lt;cc.range&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.number</div><div class="cmd-desc">Поле для чисел</div><div class="cmd-example">&lt;c.number&gt;Количество&lt;cc.number&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.date</div><div class="cmd-desc">Выбор даты</div><div class="cmd-example">&lt;c.date&gt;&lt;cc.date&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.color</div><div class="cmd-desc">Выбор цвета</div><div class="cmd-example">&lt;c.color&gt;&lt;cc.color&gt;</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МЕДИА И ССЫЛКИ -->
+    <div id="media" class="section">
+        <div class="section-title">🖼️ Ссылки и медиа</div>
+        <div class="section-content">
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.link</div><div class="cmd-desc">Ссылка (URL | текст)</div><div class="cmd-example">&lt;c.link&gt;https://ya.ru | Яндекс&lt;cc.link&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.image</div><div class="cmd-desc">Изображение (src | alt)</div><div class="cmd-example">&lt;c.image&gt;cat.jpg | Котик&lt;cc.image&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.video</div><div class="cmd-desc">Видео (src | controls)</div><div class="cmd-example">&lt;c.video&gt;video.mp4 | controls&lt;cc.video&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.audio</div><div class="cmd-desc">Аудио (src)</div><div class="cmd-example">&lt;c.audio&gt;song.mp3&lt;cc.audio&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.iframe</div><div class="cmd-desc">Встраивание страницы</div><div class="cmd-example">&lt;c.iframe&gt;https://example.com | 560 | 315&lt;cc.iframe&gt;</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СПИСКИ -->
+    <div id="lists" class="section">
+        <div class="section-title">📋 Списки</div>
+        <div class="section-content">
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.list</div><div class="cmd-desc">Маркированный список</div><div class="cmd-example">&lt;c.list&gt;&lt;c.item&gt;пункт&lt;cc.item&gt;&lt;cc.list&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.olist</div><div class="cmd-desc">Нумерованный список</div><div class="cmd-example">&lt;c.olist&gt;&lt;c.item&gt;первый&lt;cc.item&gt;&lt;cc.olist&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.item</div><div class="cmd-desc">Элемент списка</div><div class="cmd-example">&lt;c.item&gt;значение&lt;cc.item&gt;</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ТАБЛИЦЫ -->
+    <div id="tables" class="section">
+        <div class="section-title">📊 Таблицы</div>
+        <div class="section-content">
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.table</div><div class="cmd-desc">Таблица</div><div class="cmd-example">&lt;c.table&gt;...&lt;cc.table&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.row</div><div class="cmd-desc">Строка таблицы</div><div class="cmd-example">&lt;c.row&gt;...&lt;cc.row&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.header</div><div class="cmd-desc">Ячейка-заголовок (th)</div><div class="cmd-example">&lt;c.header&gt;Имя&lt;cc.header&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.cell</div><div class="cmd-desc">Ячейка таблицы (td)</div><div class="cmd-example">&lt;c.cell&gt;Значение&lt;cc.cell&gt;</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СТРУКТУРНЫЕ ЭЛЕМЕНТЫ -->
+    <div id="structural" class="section">
+        <div class="section-title">🏗️ Структурные элементы</div>
+        <div class="section-content">
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.grid</div><div class="cmd-desc">Сетка (карточки)</div><div class="cmd-example">&lt;c.grid&gt;&lt;c.card&gt;...&lt;cc.card&gt;&lt;cc.grid&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.flex</div><div class="cmd-desc">Flex-контейнер</div><div class="cmd-example">&lt;c.flex&gt;...&lt;cc.flex&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.center</div><div class="cmd-desc">Центрирование</div><div class="cmd-example">&lt;c.center&gt;текст&lt;cc.center&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.details</div><div class="cmd-desc">Сворачиваемый блок</div><div class="cmd-example">&lt;c.details&gt;&lt;c.summary&gt;Заголовок&lt;cc.summary&gt;...&lt;cc.details&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.summary</div><div class="cmd-desc">Заголовок для details</div><div class="cmd-example">&lt;c.summary&gt;Подробнее&lt;cc.summary&gt;</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ОФОРМЛЕНИЕ -->
+    <div id="style" class="section">
+        <div class="section-title">🎨 КРС-КСС (русские стили)</div>
+        <div class="section-content">
             <p>Пишите стили на русском языке внутри <code>&lt;c.style&gt; ... &lt;cc.style&gt;</code></p>
             <div class="example-box">
 <pre>&lt;c.style&gt;
 кнопка {
-  фон = зелёный
+  фон = синий
   цвет = белый
-  отступ = 8px 16px
-  углы = 8px
+  отступ = 12px 24px
+  углы = 30px
+  тень = 0 4px 12px серый
 }
 
 кнопка при наведении {
-  фон = тёмно-зелёный
+  фон = тёмно-синий
 }
 
-поле {
-  отступ = 8px
-  ширина = 200px
-  углы = 6px
-  рамка = 1px сплошной серый
-}
-
-карточка {
-  фон = белый
-  тень = 0 4px 12px серый
-  углы = 14px
-}
-&lt;cc.style&gt;</pre>
-            </div>
-
-            <h3>⚡ КРС-ЖС (Живой Сценарий на русском)</h3>
-            <p>Пишите логику на русском языке внутри <code>&lt;c.script&gt; ... &lt;cc.script&gt;</code></p>
-            <div class="example-box">
-<pre>&lt;c.script&gt;
-кнопка {
-  при нажатии показать('Привет, мир!')
-}
-
-поле {
-  при вводе показать('Ввели: ' + значение)
-}
-
-кнопка {
-  при нажатии показать('Текст на кнопке: ' + текст)
-}
-&lt;cc.script&gt;</pre>
-            </div>
-
-            <div class="info-note">
-                <strong>🧠 Как это работает:</strong><br>
-                — <code>кнопка</code> → превращается в <code>.crs-btn</code><br>
-                — <code>поле</code> → превращается в <code>.crs-input</code><br>
-                — <code>карточка</code> → превращается в <code>.crs-card</code><br>
-                — <code>показать()</code> → превращается в <code>alert()</code><br>
-                — <code>значение</code> → превращается в <code>this.value</code><br>
-                — <code>текст</code> → превращается в <code>this.innerText</code>
-            </div>
-        </div>
-    </div>
-
-    <!-- ПРИМЕРЫ -->
-    <div id="examples" class="section">
-        <div class="section-title">🎯 Полные примеры кода</div>
-        <div class="section-content">
-            <h3>🔹 Пример 1: Простая страница</h3>
-            <div class="example-box">
-<pre>&lt;CURSED-CODING&gt;
-&lt;c.title&gt; Мой первый сайт на CRS &lt;cc.title&gt;
-&lt;c.text&gt; Привет! Это страница, созданная на CRS. &lt;cc.text&gt;
-&lt;c.button&gt; Нажми меня &lt;cc.button&gt;
-&lt;c.card&gt;
-  &lt;c.text&gt; Текст внутри карточки &lt;cc.text&gt;
-&lt;cc.card&gt;
-&lt;CCURSED-CODING&gt;</pre>
-            </div>
-
-            <h3>🔹 Пример 2: С русскими стилями и скриптами</h3>
-            <div class="example-box">
-<pre>&lt;CURSED-CODING&gt;
-&lt;c.title&gt; 🐄 КРС — пример &lt;cc.title&gt;
-
-&lt;c.text&gt; Введи своё имя: &lt;cc.text&gt;
-&lt;c.input&gt; Введите имя &lt;cc.input&gt;
-&lt;c.button&gt; Поздороваться &lt;cc.button&gt;
-
-&lt;c.style&gt;
-кнопка {
-  фон = зелёный
-  цвет = белый
-  отступ = 8px 16px
-  углы = 8px
-}
-
-поле {
-  отступ = 8px
-  ширина = 200px
-  углы = 6px
-  рамка = 1px сплошной серый
-}
-&lt;cc.style&gt;
-
-&lt;c.script&gt;
-кнопка {
-  при нажатии показать('Привет, мир!')
-}
-
-поле {
-  при вводе показать('Ввели: ' + значение)
-}
-&lt;cc.script&gt;
-&lt;CCURSED-CODING&gt;</pre>
-            </div>
-
-            <h3>🔹 Пример 3: Карточки товаров</h3>
-            <div class="example-box">
-<pre>&lt;CURSED-CODING&gt;
-&lt;c.title&gt; Наши товары &lt;cc.title&gt;
-
-&lt;c.card&gt;
-  &lt;c.text&gt; 🥛 Молоко фермерское &lt;cc.text&gt;
-  &lt;c.text&gt; Цена: 120 рублей &lt;cc.text&gt;
-  &lt;c.button&gt; Купить &lt;cc.button&gt;
-&lt;cc.card&gt;
-
-&lt;c.card&gt;
-  &lt;c.text&gt; 🥩 Говядина мраморная &lt;cc.text&gt;
-  &lt;c.text&gt; Цена: 850 рублей &lt;cc.text&gt;
-  &lt;c.button&gt; Заказать &lt;cc.button&gt;
-&lt;cc.card&gt;
-
-&lt;c.style&gt;
 карточка {
   фон = белый
   тень = 0 2px 8px серый
   углы = 12px
-  отступ = 16px
 }
+&lt;cc.style&gt;</pre>
+            </div>
+            <div class="commands-grid">
+                <div class="cmd-card"><div class="cmd-name">c.badge</div><div class="cmd-desc">Маленький ярлык</div><div class="cmd-example">&lt;c.badge&gt;Новинка&lt;cc.badge&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.mark</div><div class="cmd-desc">Выделенный текст</div><div class="cmd-example">&lt;c.mark&gt;важно&lt;cc.mark&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.code</div><div class="cmd-desc">Блок кода</div><div class="cmd-example">&lt;c.code&gt;let x = 5;&lt;cc.code&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.alert</div><div class="cmd-desc">Блок уведомления</div><div class="cmd-example">&lt;c.alert&gt;Внимание!&lt;cc.alert&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.progress</div><div class="cmd-desc">Индикатор прогресса</div><div class="cmd-example">&lt;c.progress&gt;60&lt;cc.progress&gt;</div></div>
+                <div class="cmd-card"><div class="cmd-name">c.tooltip</div><div class="cmd-desc">Текст с подсказкой</div><div class="cmd-example">&lt;c.tooltip&gt;Пояснение&lt;cc.tooltip&gt;</div></div>
+            </div>
+            <div class="info-note">
+                <strong>🎨 Доступные цвета в КРС-КСС:</strong><br>
+                синий, тёмно-синий, светло-синий, красный, зелёный, жёлтый, фиолетовый, оранжевый, розовый, серый, чёрный, белый
+            </div>
+        </div>
+    </div>
+
+    <!-- КРС-ЖС -->
+    <div id="script" class="section">
+        <div class="section-title">⚡ КРС-ЖС (русские скрипты)</div>
+        <div class="section-content">
+            <p>Пишите логику на русском языке внутри <code>&lt;c.script&gt; ... &lt;cc.script&gt;</code></p>
+            <div class="example-box">
+<pre>&lt;c.script&gt;
+let счет = 0;
 
 кнопка {
-  фон = зелёный
+  при нажатии показать('Счёт: ' + счет)
+  счет = счет + 1
+}
+
+поле {
+  при вводе показать('Вы ввели: ' + значение)
+}
+&lt;cc.script&gt;</pre>
+            </div>
+            <div class="info-note">
+                <strong>🧠 Что работает в КРС-ЖС:</strong><br>
+                — <code>кнопка { при нажатии показать('текст') }</code><br>
+                — <code>поле { при вводе показать('Ввели: ' + значение) }</code><br>
+                — <code>карточка { при наведении показать('На карточке') }</code><br>
+                — Переменные <code>let имя = значение</code><br>
+                — <code>показать('текст' + переменная)</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПОЛНЫЙ ПРИМЕР -->
+    <div id="examples" class="section">
+        <div class="section-title">🎯 Полный пример кода</div>
+        <div class="section-content">
+            <div class="example-box">
+<pre>&lt;CURSED-CODING&gt;
+
+&lt;c.title&gt; 🐄 КРС — полный пример &lt;cc.title&gt;
+
+&lt;c.text&gt; Введи своё имя: &lt;cc.text&gt;
+&lt;c.input id="userName" placeholder="Твоё имя"&gt; &lt;cc.input&gt;
+
+&lt;c.text&gt; Выбери цвет: &lt;cc.text&gt;
+&lt;c.radio id="colorRadio"&gt;Синий, Зелёный, Красный&lt;cc.radio&gt;
+
+&lt;c.button id="greetBtn"&gt; Поздороваться &lt;cc.button&gt;
+
+&lt;c.card&gt;
+  &lt;c.text id="message"&gt; Здесь появится приветствие &lt;cc.text&gt;
+&lt;cc.card&gt;
+
+&lt;c.style&gt;
+кнопка {
+  фон = синий
   цвет = белый
-  углы = 8px
-  отступ = 6px 12px
+  углы = 30px
+  отступ = 10px 20px
+}
+
+кнопка при наведении {
+  фон = тёмно-синий
+}
+
+карточка {
+  фон = белый
+  тень = 0 2px 8px серый
+  углы = 12px
 }
 &lt;cc.style&gt;
 
 &lt;c.script&gt;
-кнопка {
-  при нажатии показать('Товар добавлен в корзину!')
-}
+document.getElementById('greetBtn').onclick = function() {
+    let name = document.getElementById('userName').value;
+    let color = document.querySelector('input[name="crs_radio_colorRadio"]:checked');
+    let colorText = color ? color.value : 'синий';
+    document.getElementById('message').innerText = 'Привет, ' + (name || 'гость') + '! Твой цвет: ' + colorText;
+};
 &lt;cc.script&gt;
-&lt;CCURSED-CODING&gt;</pre>
+
+&lt;/CCURSED-CODING&gt;</pre>
             </div>
         </div>
     </div>
 
     <!-- ПРАВИЛА -->
-    <div id="rules" class="section">
+    <div class="section">
         <div class="section-title">⚡ Правила синтаксиса</div>
         <div class="section-content">
             <ul style="margin-left: 24px; line-height: 1.8;">
-                <li><strong>1. Обязательная обёртка</strong> — весь код должен быть внутри <code>&lt;CURSED-CODING&gt; ... &lt;CCURSED-CODING&gt;</code></li>
-                <li><strong>2. Закрывающие теги</strong> — строго <code>&lt;cc.имя_команды&gt;</code>, НЕ <code>&lt;/c.имя&gt;</code> и НЕ <code>&lt;/cc.имя&gt;</code></li>
-                <li><strong>3. Регистр</strong> — все команды пишутся <strong>нижним регистром</strong> (c.button, c.text)</li>
+                <li><strong>1. Обязательная обёртка</strong> — весь код внутри <code>&lt;CURSED-CODING&gt; ... &lt;CCURSED-CODING&gt;</code></li>
+                <li><strong>2. Закрывающие теги</strong> — строго <code>&lt;cc.имя_команды&gt;</code>, НЕ <code>&lt;/c.имя&gt;</code></li>
+                <li><strong>3. Атрибуты</strong> — работают <code>id="..."</code> и <code>class="..."</code></li>
                 <li><strong>4. Вложенность</strong> — команды можно вкладывать друг в друга</li>
-                <li><strong>5. КРС-КСС</strong> — внутри <code>&lt;c.style&gt;</code> используйте русские свойства: <code>фон = зелёный</code>, <code>углы = 8px</code></li>
-                <li><strong>6. КРС-ЖС</strong> — внутри <code>&lt;c.script&gt;</code> используйте: <code>кнопка { при нажатии показать('текст') }</code></li>
-                <li><strong>7. Селекторы в КРС-ЖС:</strong> <code>кнопка</code>, <code>поле</code>, <code>карточка</code>, <code>текст</code>, <code>заголовок</code></li>
+                <li><strong>5. КРС-КСС</strong> — русские свойства: <code>фон = синий</code>, <code>углы = 8px</code></li>
+                <li><strong>6. КРС-ЖС</strong> — русские события: <code>при нажатии</code>, <code>при вводе</code>, <code>при наведении</code></li>
             </ul>
-            <div class="warning-note">
-                💡 <strong>Самые частые ошибки:</strong><br>
-                — Использование <code>&lt;/c.tag&gt;</code> вместо <code>&lt;cc.tag&gt;</code><br>
-                — Забытый закрывающий тег <code>&lt;cc.tag&gt;</code><br>
-                — Русские команды в открытии тега (пишем <code>c.button</code>, а не <code>c.кнопка</code>)
-            </div>
         </div>
     </div>
 
     <!-- Шпаргалка -->
     <div class="section">
-        <div class="section-title">🚀 Быстрый старт за 2 минуты</div>
+        <div class="section-title">🚀 Шпаргалка быстрого старта</div>
         <div class="section-content">
             <div class="example-box" style="background: #2d3e4a;">
-<pre>1. Пишем каркас:
+<pre>1. Каркас:
 &lt;CURSED-CODING&gt;
   ... твой код ...
 &lt;CCURSED-CODING&gt;
 
-2. Добавляем заголовок:
-&lt;c.title&gt; Моя страница &lt;cc.title&gt;
+2. Кнопка с id:
+&lt;c.button id="myBtn"&gt;Нажми&lt;cc.button&gt;
 
-3. Текст и кнопка:
-&lt;c.text&gt; Привет! &lt;cc.text&gt;
-&lt;c.button&gt; Нажми &lt;cc.button&gt;
+3. Поле ввода:
+&lt;c.input id="myInput"&gt;Текст&lt;cc.input&gt;
 
-4. Добавляем стиль на русском:
+4. Стили на русском:
 &lt;c.style&gt;
-кнопка {
-  фон = зелёный
-  углы = 10px
-}
+кнопка { фон = синий; углы = 10px }
 &lt;cc.style&gt;
 
-5. Добавляем поведение на русском:
+5. Скрипты на русском:
 &lt;c.script&gt;
-кнопка {
-  при нажатии показать('Привет!')
-}
-&lt;cc.script&gt;
-
-6. Готово! Запускаем.</pre>
+кнопка { при нажатии показать('Привет!') }
+&lt;cc.script&gt;</pre>
             </div>
-            <p style="margin-top: 16px;">✨ CRS создан, чтобы веб-разработка была быстрой и понятной. Пиши на английском команды, на русском — стили и скрипты.</p>
         </div>
     </div>
 </div>
 
 <footer>
-    <p>📘 CRS Language — полная документация | Синтаксис: &lt;c.команда&gt; ... &lt;cc.команда&gt;</p>
+    <p>📘 КРС Language — полная документация | Синтаксис: &lt;c.команда&gt; ... &lt;cc.команда&gt;</p>
     <p style="margin-top: 8px; font-size: 0.8rem;">Никаких слэшей в закрытии. Только cc.тег!</p>
 </footer>
 
@@ -512,6 +355,5 @@
         box.parentNode.insertBefore(btn, box.nextSibling);
     });
 </script>
-
 </body>
 </html>
